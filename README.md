@@ -19,13 +19,13 @@ This is a simple Flask blog application that allows users to register, log in, c
 1. Clone the repository:
 
    ```bash
-   [git clone https://github.com/sawanjr/flask-blog.git]
+   (https://github.com/sawanjr/BLOG-WEBSITE.git)
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd flask-blog
+   cd BLOG-WEBSITE
    ```
 
 3. Create a virtual environment (optional but recommended):
