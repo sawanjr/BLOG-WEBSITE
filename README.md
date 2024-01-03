@@ -1,4 +1,4 @@
-# Flask Blog Application
+# Blog Application
 
 This is a simple Flask blog application that allows users to register, log in, create, edit, and delete posts, and reset their passwords. The application uses Flask, Flask-SQLAlchemy for database management, Flask-Bcrypt for password hashing, Flask-Login for user authentication, and Flask-Mail for sending email notifications.
 
