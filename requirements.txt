@@ -20,5 +20,7 @@ SQLAlchemy==2.0.23
 typing-extensions==4.9.0
 Werkzeug==3.0.1
 WTForms==3.1.1
-Pillow
+Pillow== 10.1.0
+Flask_mail== 0.9.1
+
 

@@ -129,7 +129,8 @@ env.bak/
 venv.bak/
 venv_my_flask_project/
 virtual_env/
-
+ 
+ 
 
 # Spyder project settings
 .spyderproject
