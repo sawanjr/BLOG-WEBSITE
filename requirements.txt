@@ -1,9 +1,9 @@
 Flask==2.0.0
 bcrypt==4.1.2
 email-validator==2.1.0.post1
-Flask-Bcrypt==0.7.1  # Downgraded for compatibility
-Flask-Login==0.5.0   # Downgraded for compatibility
-Flask-SQLAlchemy==3.0.2  # Downgraded for compatibility
+Flask-Bcrypt==0.7.1; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'  # Explicit Flask constraints
+Flask-Login==0.5.0; python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'   # Explicit Flask constraints
+Flask-SQLAlchemy==2.4.4  # Further downgraded for compatibility
 Flask-WTF==1.2.1
 itsdangerous==2.0.1
 Jinja2==3.1.2
@@ -13,3 +13,4 @@ WTForms==3.1.1
 Pillow==10.1.0
 Flask_mail==0.9.1
 gunicorn
+
