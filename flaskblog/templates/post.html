@@ -6,9 +6,11 @@
       <div class="article-metadata">
         <a class="mr-2" href="{{url_for('user_posts',username = post.author.username)}}">{{ post.author.username }}</a>
         <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-        {% if post.author == current_user %}
+
+        <!-- Show update and delete options for the post author or admin -->
+        {% if post.author == current_user or current_user.is_admin %}
           <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('updatepost', post_id=post.id) }}">Update</a>
+            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
             <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
           </div>
         {% endif %}
@@ -17,7 +19,8 @@
       <p class="article-content">{{ post.content }}</p>
     </div>
   </article>
-  <!-- Modal -->
+
+  <!-- Modal for deletion confirmation -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

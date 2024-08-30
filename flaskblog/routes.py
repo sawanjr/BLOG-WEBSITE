@@ -138,7 +138,7 @@ def update_post(post_id):
 @login_required
 def delete_post(post_id):
     post = Post.query.get_or_404(post_id)
-    if post.author != current_user:
+    if post.author != current_user and not current_user.is_admin:
         abort(403)
     db.session.delete(post)
     db.session.commit()
@@ -164,8 +164,7 @@ def send_reset_email(user):
     msg.body = f'''To reset your password, visit the following link:
 {url_for('reset_token', token=token, _external=True)}
 
-If you did not make this request then simply ignore this email and no changes will be made.
-'''
+hii gadhiii kaise'''
     mail.send(msg)
 
 
@@ -198,3 +197,4 @@ def reset_token(token):
         flash('Your password has been updated! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
+
